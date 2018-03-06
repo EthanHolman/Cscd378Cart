@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { InventoryModule } from './inventory/inventory.module';
-import { ProductListComponent } from './inventory/components/product-list.component';
-import { CartListComponent } from './checkout/components/cart-list.component';
-import { CheckoutModule } from './checkout/checkout.module';
+import { CoreModule } from './core/core.module';
+import { ProductListComponent } from './routed-modules/inventory/components/product-list.component';
+import { CartListComponent } from './routed-modules/checkout/components/cart-list.component';
+import { InventoryModule } from './routed-modules/inventory/inventory.module';
+import { CheckoutModule } from './routed-modules/checkout/checkout.module';
 
 export const routes: Route[] =  [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
@@ -21,7 +22,8 @@ export const routes: Route[] =  [
     BrowserModule,
     RouterModule.forRoot(routes, { useHash: true }),
     InventoryModule,
-    CheckoutModule
+    CheckoutModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

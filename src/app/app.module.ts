@@ -8,10 +8,14 @@ import { ProductListComponent } from './routed-modules/inventory/components/prod
 import { CartListComponent } from './routed-modules/checkout/components/cart-list.component';
 import { InventoryModule } from './routed-modules/inventory/inventory.module';
 import { CheckoutModule } from './routed-modules/checkout/checkout.module';
+import { SettingsModule } from './routed-modules/settings/settings.module';
+import { SettingsDirectoryComponent } from './routed-modules/settings/components/settings-directory.component';
 
 export const routes: Route[] =  [
-  { path: '', component: ProductListComponent, pathMatch: 'full' },
-  { path: 'cart', component: CartListComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'inventory' },
+  { path: 'inventory', component: ProductListComponent },
+  { path: 'checkout', component: CartListComponent },
+  { path: 'settings', component: SettingsDirectoryComponent }
 ];
 
 @NgModule({
@@ -20,10 +24,12 @@ export const routes: Route[] =  [
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     RouterModule.forRoot(routes, { useHash: true }),
+    
     InventoryModule,
     CheckoutModule,
-    CoreModule
+    SettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

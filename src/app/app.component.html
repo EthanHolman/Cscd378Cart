@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<div class='site-container'>
+    <div class='navbar-container'>
+        <div>Online Auto Sales</div>
+        <nav>
+            <a routerLink='/inventory'>View Inventory</a>
+            <a routerLink='/checkout'>Shopping Cart</a>
+            <a routerLink='/settings'>Store Settings</a>
+        </nav>
+    </div>
+
+    <div class='content-container'>
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class='footer-container'>
+        Designed by Ethan Holman, 2018
+    </div>
+</div>

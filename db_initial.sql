@@ -1,5 +1,5 @@
 create table Products (
-	id int,
+	id int primary key,
 	categoryId int,
 	name varchar(50),
 	description varchar(255),
@@ -9,12 +9,12 @@ create table Products (
 );
 
 create table Category (
-	id int,
+	id int primary key,
 	name varchar(50)
 );
 
 create table Users (
-	userId int,
+	userId int primary key,
 	username varchar(50),
 	password varchar(100),
 	name varchar(100),

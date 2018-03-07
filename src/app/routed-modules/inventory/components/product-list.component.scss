@@ -1,0 +1,50 @@
+@import '../../../../assets/scss/variables';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include bp(sm) {
+        flex-direction: row;
+    }
+
+    .categories-container {
+        @include bp(sm) {
+            flex: 1;
+        }
+    }
+
+    .products-container {
+        display: flex;
+
+        @include bp(sm) {
+            flex: 3;
+        }
+
+        .product {
+            border: 1px solid $light-grey;
+            text-align: center;
+
+            .image {
+                width: 100%;
+                height: 10em;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .about {
+                padding: 0.5em;
+
+                .name {
+                    font-size: 1.25em;
+                    font-weight: 700;
+                }
+    
+                .description {
+                    font-style: italic;
+                }
+            }
+            
+        }
+    }
+}

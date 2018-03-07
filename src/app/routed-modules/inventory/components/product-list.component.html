@@ -1,1 +1,22 @@
-<div>You're on the product list page!</div>
+<div class='wrapper'>
+
+    <div class='categories-container'>
+        <h2>Categories</h2>
+        <div *ngIf='!categoriesLoaded'>Loading...</div>
+        <div *ngFor='let category of categories'>
+            {{ category.name}}
+        </div>
+    </div>
+    
+    <div class='products-container'>
+        <div *ngIf='!productsLoaded'>Loading Products...</div>
+        <div *ngFor='let product of products' class='product'>
+            <div class='image' [style.background-image]="'url(assets/product-img/' + product.imageName + ')'"></div>
+            <div class='about'>
+                <div class='name'>{{ product.name }}</div>
+                <div class='description'>{{ product.description }}</div>
+            </div>
+        </div>
+    </div>
+
+</div>

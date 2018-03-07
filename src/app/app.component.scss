@@ -7,7 +7,7 @@
 }
 
 .navbar-container {
-    background-color: #d0d0d0;
+    background-color: $light-grey;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
@@ -32,4 +32,11 @@
 
 .content-container {
     flex: 1;
+}
+
+.footer-container {
+    background-color: $light-grey;
+    div {
+        padding: 1em;
+    }
 }

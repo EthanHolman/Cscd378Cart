@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -24,6 +25,7 @@ export const routes: Route[] =  [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CoreModule,
     RouterModule.forRoot(routes, { useHash: true }),
     

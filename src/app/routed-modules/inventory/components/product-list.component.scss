@@ -3,25 +3,43 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+    
 
     @include bp(sm) {
         flex-direction: row;
     }
 
     .categories-container {
+        background-color: $lighter-grey;
+        text-align: center;
+
         @include bp(sm) {
             flex: 1;
+        }
+
+        .category {
+            padding: 0.5em;
+        }
+
+        .category:hover {
+            background-color: $md-grey;
+            color: white;
         }
     }
 
     .products-container {
         display: flex;
+        flex-wrap: wrap;
 
         @include bp(sm) {
-            flex: 3;
+            flex: 4;
         }
 
         .product {
+            flex-grow: 1;
+            max-width: calc(25% - 2em);
+            width: 25%;
+            margin: 1em;
             border: 1px solid $light-grey;
             text-align: center;
 

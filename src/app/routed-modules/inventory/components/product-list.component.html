@@ -2,8 +2,8 @@
 
     <div class='categories-container'>
         <h2>Categories</h2>
-        <div *ngIf='!categoriesLoaded'>Loading...</div>
-        <div *ngFor='let category of categories'>
+        <div *ngIf='!categoriesLoaded' class='category'>Loading...</div>
+        <div *ngFor='let category of categories' class='category'>
             {{ category.name}}
         </div>
     </div>

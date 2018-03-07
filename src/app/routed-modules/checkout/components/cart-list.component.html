@@ -1,1 +1,11 @@
-<div>You're on the cart list page!</div>
+<h2>Shopping Cart</h2>
+
+<div class='line-items-container'>
+    <div *ngIf='cartItems.length === 0'>Your shopping cart is empty!</div>
+    <div *ngFor='let cartItem of cartItems' class='line-item'>
+        <div>{{ cartItem.item.name }}</div>
+        <div>{{ cartItem.quantity }}</div>
+        <div>{{ cartItem.item.price }}</div>
+        <div>{{ (cartItem.item.price * cartItem.quantity) }}</div>
+    </div>
+</div>

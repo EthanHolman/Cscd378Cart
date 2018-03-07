@@ -10,13 +10,17 @@ import { CartListComponent } from './routed-modules/checkout/components/cart-lis
 import { InventoryModule } from './routed-modules/inventory/inventory.module';
 import { CheckoutModule } from './routed-modules/checkout/checkout.module';
 import { SettingsModule } from './routed-modules/settings/settings.module';
-import { SettingsDirectoryComponent } from './routed-modules/settings/components/settings-directory.component';
+import { ProductDetailComponent } from './routed-modules/inventory/components/product-detail.component';
+import { SettingsComponent } from './routed-modules/settings/components/settings.component';
 
 export const routes: Route[] =  [
   { path: '', pathMatch: 'full', redirectTo: 'inventory' },
-  { path: 'inventory', component: ProductListComponent },
+  { path: 'inventory', children: [
+    { path: '', component: ProductListComponent },
+    { path: ':id', component: ProductDetailComponent }
+  ]},
   { path: 'checkout', component: CartListComponent },
-  { path: 'settings', component: SettingsDirectoryComponent }
+  { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({

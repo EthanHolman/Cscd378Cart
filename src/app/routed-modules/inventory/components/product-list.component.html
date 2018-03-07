@@ -10,11 +10,12 @@
     
     <div class='products-container'>
         <div *ngIf='!productsLoaded'>Loading Products...</div>
-        <div *ngFor='let product of products' class='product'>
+        <div *ngFor='let product of products' (click)='navigateToDetails(product)' class='product'>
             <div class='image' [style.background-image]="'url(assets/product-img/' + product.imageName + ')'"></div>
             <div class='about'>
                 <div class='name'>{{ product.name }}</div>
                 <div class='description'>{{ product.description }}</div>
+                <div class='price'>{{ product.price }}</div>
             </div>
         </div>
     </div>

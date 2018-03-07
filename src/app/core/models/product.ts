@@ -6,4 +6,6 @@ export class Product {
     imageName: string;
     rating: number;
     about: string;
+    price: number;
+    QOH: number;
 }

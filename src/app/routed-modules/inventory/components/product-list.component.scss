@@ -30,6 +30,7 @@
     .products-container {
         display: flex;
         flex-wrap: wrap;
+        cursor: pointer;
 
         @include bp(sm) {
             flex: 4;

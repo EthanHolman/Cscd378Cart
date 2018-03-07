@@ -1,0 +1,25 @@
+<div>
+    <img src='assets/product-img/{{ product.imageName }}' />
+</div>
+
+
+<ng-container *ngIf='!loadedProduct'>
+    <div>Loading Item Details...</div>
+</ng-container>
+
+<ng-container *ngIf='loadedProduct'>
+    <h2>{{ product.name }}</h2>
+    <div>
+        {{ product.description }}
+        <hr />
+        {{ product.about }}
+        <span>Item Number: {{ product.id }}</span>
+    </div>
+    
+    <div>
+        Price: {{ product.price }}
+        <br />
+        <input type='number' />
+        <button *ngIf='product.QOH > 0' type='button'>Add To Cart</button>
+    </div>
+</ng-container>

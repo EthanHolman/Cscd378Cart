@@ -19,7 +19,8 @@
     <div>
         Price: {{ product.price }}
         <br />
-        <input type='number' />
-        <button *ngIf='product.QOH > 0' type='button'>Add To Cart</button>
+        <input type='number' [(ngModel)]='quantityToCart' />
+        <button *ngIf='product.QOH > 0' (click)='addToCart()' type='button'>Add To Cart</button>
+        <div *ngIf='product.QOH === 0'>Out Of Stock!</div>
     </div>
 </ng-container>

@@ -17,7 +17,7 @@
     </div>
     
     <div>
-        Price: {{ product.price }}
+        Price: {{ product.price | currency }}
         <br />
         <input type='number' [(ngModel)]='quantityToCart' />
         <button *ngIf='product.QOH > 0' (click)='addToCart()' type='button'>Add To Cart</button>

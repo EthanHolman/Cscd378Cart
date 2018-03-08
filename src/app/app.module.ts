@@ -12,6 +12,7 @@ import { CheckoutModule } from './routed-modules/checkout/checkout.module';
 import { SettingsModule } from './routed-modules/settings/settings.module';
 import { ProductDetailComponent } from './routed-modules/inventory/components/product-detail.component';
 import { SettingsComponent } from './routed-modules/settings/components/settings.component';
+import { NotFoundComponent } from './not-found.component';
 
 export const routes: Route[] =  [
   { path: '', pathMatch: 'full', redirectTo: 'inventory' },
@@ -20,12 +21,14 @@ export const routes: Route[] =  [
     { path: ':id', component: ProductDetailComponent }
   ]},
   { path: 'checkout', component: CartListComponent },
-  { path: 'settings', component: SettingsComponent }
+  { path: 'settings', component: SettingsComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 <div class='site-container'>
     <div class='navbar-container'>
-        <div>Online Auto Sales</div>
+        <div class='graphic'><img src='assets/img/audi_r8.png' /></div>
+        <div class='title'>Holman Auto Sales</div>
         <nav>
-            <a routerLink='/inventory'>View Inventory</a>
-            <a routerLink='/checkout'>Shopping Cart</a>
-            <a routerLink='/settings'>Store Settings</a>
+            <a routerLink='/inventory'><i class="fas fa-clipboard-list"></i>View Inventory</a>
+            <a routerLink='/checkout'><i class="fas fa-shopping-cart"></i>Shopping Cart ({{ getNumCartItems() }})</a>
+            <a routerLink='/settings'><i class="fas fa-cog"></i>Store Settings</a>
         </nav>
     </div>
 
@@ -13,6 +14,13 @@
     </div>
 
     <div class='footer-container'>
-        <div>Designed by Ethan Holman, 2018</div>
+        <div>
+            <h2>Designed by Ethan Holman, 2018</h2>
+            <nav>
+                <a routerLink='/'>About</a>
+                <a routerLink='/'>Contact</a>
+                <a routerLink='/'>About</a>
+            </nav>
+        </div>
     </div>
 </div>

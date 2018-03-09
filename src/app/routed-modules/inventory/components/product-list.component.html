@@ -3,9 +3,12 @@
     <div class='categories-container'>
         <h2>Categories</h2>
         <div *ngIf='!categoriesLoaded' class='category'>Loading...</div>
-        <div *ngFor='let category of categories' class='category'>
+        <a *ngIf='categoriesLoaded' class='category'>
+            All Products
+        </a>
+        <a *ngFor='let category of categories' class='category'>
             {{ category.name}}
-        </div>
+        </a>
     </div>
     
     <div class='products-container'>

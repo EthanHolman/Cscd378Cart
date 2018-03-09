@@ -3,7 +3,7 @@
 .site-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 .navbar-container {
@@ -12,18 +12,48 @@
     flex-direction: column;
     font-family: sans-serif;
 
-    @include bp(sm) {
+    @include bp(md) {
         flex-direction: row;
     }
 
-    div { flex: 1; }
+    .graphic {
+        padding: 0.5em;
+        img {
+            max-height: 100px;
+            display: block;
+            margin: auto;
+        }
+    }
 
-    nav a, div { padding: 1em; }
+    .title {
+        flex-grow: 1;
+        font-family: 'Permanent Marker';
+        font-size: 9vw;
+        text-align: center;
+
+        @include bp(sm) { font-size: 3em; }
+        @include bp(md) { text-align: left; }
+    }
+
+    nav a, .title { padding: 0.5em; }
+
+    nav { display: flex; padding: 0.5em; }
+
     nav a {
         display: inline-block;
+        text-align: center;
+        flex-grow: 1;
+        align-self: center;
+        color: black;
+
+        i {
+            display: block;
+            font-size: 1.75em;
+            padding-bottom: 0.25em;
+        }
 
         &:hover {
-            background-color: $md-grey;
+            background-color: $accent1;
             color: white;
         }
     }
@@ -36,7 +66,25 @@
 
 .footer-container {
     background-color: $light-grey;
-    div {
-        padding: 1em;
+    padding: 1em;
+
+    h2 {
+        font-family: 'Permanent Marker';
+        margin: 0;
+        padding-bottom: 1rem;
     }
+
+    div {
+        text-align: center;
+        margin: auto;
+        padding: 1em;
+
+        a {
+            font-size: 1.25em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 0 1em;
+        }
+    }
+
 }

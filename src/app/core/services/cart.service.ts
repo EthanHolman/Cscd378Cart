@@ -13,6 +13,10 @@ export class CartService {
         return this.cartItems;
     }
 
+    getNumItems(): number {
+        return this.cartItems.length;
+    }
+
     addToCart(item: Product, quantity: number): void {
         this.cartItems.push(new CartLineItem(item, quantity));
     }

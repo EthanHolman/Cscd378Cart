@@ -1,0 +1,10 @@
+@import '../../../../assets/scss/variables';
+
+.line-item {
+    display: flex;
+    flex-direction: row;
+
+    div {
+        padding: 0.25em;
+    }
+}

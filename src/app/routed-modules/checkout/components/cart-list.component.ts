@@ -4,7 +4,8 @@ import { ProductService } from "../../../core/services/product.service";
 import { CartLineItem } from "../../../core/models/cart-line-item";
 
 @Component({
-    templateUrl: 'cart-list.component.html'
+    templateUrl: 'cart-list.component.html',
+    styleUrls: ['cart-list.component.scss']
 })
 export class CartListComponent implements OnInit {
 

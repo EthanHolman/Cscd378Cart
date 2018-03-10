@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
     loadedProduct = false;
     product: Product;
-    quantityToCart: number;
+    quantityToCart = 1;
 
     constructor(
         private _route: ActivatedRoute,

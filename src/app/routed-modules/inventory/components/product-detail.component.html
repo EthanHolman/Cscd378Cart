@@ -1,26 +1,43 @@
-<div>
-    <img src='assets/product-img/{{ product.imageName }}' />
+<div *ngIf='!loadedProduct'>
+    <h2>Loading Item Details...</h2>
 </div>
 
+<div *ngIf='loadedProduct' class='main-container'>
+    <div class='image-container'>
+        <ng-container *ngFor='let img of product.images'>
+            <img class='styled-section' src='/assets/product-img/{{ img.imgName }}' />
+        </ng-container>
+    </div>
 
-<ng-container *ngIf='!loadedProduct'>
-    <div>Loading Item Details...</div>
-</ng-container>
-
-<ng-container *ngIf='loadedProduct'>
-    <h2>{{ product.name }}</h2>
-    <div>
-        {{ product.description }}
-        <hr />
-        {{ product.about }}
-        <span>Item Number: {{ product.id }}</span>
+    <div class='details-container'>
+        <div class='styled-section title-buy-container'>
+            <div class='title'>
+                <h3>{{ product.name }}</h3>
+                <div class='price'>
+                    Price: {{ product.price | currency }}
+                </div>
+            </div>
+            <div *ngIf='product.QOH > 0' class='buy-container'>
+                <div>
+                    <div>QTY:</div>
+                    <div><input type='number' [(ngModel)]='quantityToCart' /></div>
+                </div>
+                <div>
+                    <button (click)='addToCart()' type='button'>Add To Cart</button>
+                </div>
+            </div>
+            <div *ngIf='product.QOH === 0' class='buy-container'>
+                <div>Out Of Stock!</div>
+            </div>
+        </div>
+    
+        <div class='styled-section description-container'>
+            <h3>Description</h3>
+            <div>{{ product.description }}</div>
+            <h3>About</h3>
+            <div>{{ product.about }}</div>
+            <div>Item Number: {{ product.id }}</div>
+        </div>
     </div>
     
-    <div>
-        Price: {{ product.price | currency }}
-        <br />
-        <input type='number' [(ngModel)]='quantityToCart' />
-        <button *ngIf='product.QOH > 0' (click)='addToCart()' type='button'>Add To Cart</button>
-        <div *ngIf='product.QOH === 0'>Out Of Stock!</div>
-    </div>
-</ng-container>
+</div>

@@ -25,4 +25,10 @@ export class ProductService {
     getCategories(): Observable<Category[]> {
         return this._http.get<Category[]>("http://ethanholman.com/cscd378/cart-api/category.php");
     }
+
+    getPrimaryImageName(product: Product): string {
+        const image = product.images.find(img => img.id == product.primaryImageId);
+        if (image === undefined) return null;
+        return image.imgName;
+    }
 }

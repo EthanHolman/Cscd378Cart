@@ -13,8 +13,8 @@
     
     <div class='products-container'>
         <div *ngIf='!productsLoaded'>Loading Products...</div>
-        <div *ngFor='let product of products' (click)='navigateToDetails(product)' class='product'>
-            <div class='image' [style.background-image]="'url(assets/product-img/' + product.imageName + ')'"></div>
+        <div *ngFor='let product of products' (click)='navigateToDetails(product)' class='styled-section product'>
+            <div class='image' [style.background-image]="'url(assets/product-img/' + getImgName(product) + ')'"></div>
             <div class='about'>
                 <div class='name'>{{ product.name }}</div>
                 <div class='description'>{{ product.description }}</div>

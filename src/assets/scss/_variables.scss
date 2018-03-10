@@ -1,9 +1,16 @@
+// colors
+
 $light-grey: #d0d0d0;
 $lighter-grey: #f0f0f0;
 $md-grey: #a0a0a0;
 $accent1: #00cc66;
 $bg1: #f0f0f0;
 
+// paddings 
+
+$sm-margin: 0.5em;
+
+// responsive breakpoints mixins
 
 @mixin bp($size) {
     @if $size == lg {

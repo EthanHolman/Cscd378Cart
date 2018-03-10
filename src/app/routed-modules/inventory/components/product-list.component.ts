@@ -35,4 +35,7 @@ export class ProductListComponent implements OnInit {
         this._router.navigateByUrl(`/inventory/${product.id}`);
     }
 
+    getImgName(product: Product): string {
+        return this._productService.getPrimaryImageName(product);
+    }
 }

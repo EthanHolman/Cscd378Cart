@@ -36,10 +36,12 @@ export class CartService {
 
     updateQuantity(item: CartLineItem, newQuantity: number): void {
         this.cartItems.find(cartItem => cartItem === item).quantity = newQuantity;
+
+        this.updateSavedCart();
     }
 
     private updateSavedCart(): void {
-        localStorage.push("savedCart", JSON.stringify(this.cartItems));
+        localStorage.setItem("savedCart", JSON.stringify(this.cartItems));
     }
 
     private getSavedCart(): CartLineItem[] {

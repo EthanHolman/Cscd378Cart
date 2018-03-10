@@ -1,11 +1,20 @@
-<h2>Shopping Cart</h2>
+<h2 class='main-heading'>Shopping Cart</h2>
 
 <div class='line-items-container'>
     <div *ngIf='cartItems.length === 0'>Your shopping cart is empty!</div>
-    <div *ngFor='let cartItem of cartItems' class='line-item'>
-        <div>{{ cartItem.item.name }}</div>
-        <div>{{ cartItem.quantity }}</div>
-        <div>{{ cartItem.item.price }}</div>
-        <div>{{ (cartItem.item.price * cartItem.quantity) }}</div>
+    <div *ngFor='let cartItem of cartItems' class='styled-section line-item'>
+        <div class='image' [style.background-image]="'url(assets/product-img/' + getImgName(cartItem.item) + ')'"></div>
+        <div class='details'>
+            <div class='item-name'>{{ cartItem.item.name }}</div>
+            <div class='inner-details'>
+                <div class='item-quantity'>Quantity: {{ cartItem.quantity }}</div>
+                <div class='item-price'>{{ cartItem.item.price | currency }}/item</div>
+                <div class='item-price-quant'>Subtotal: {{ (cartItem.item.price * cartItem.quantity | currency) }}</div>
+            </div>
+            <div class='buttons'>
+                <button (click)='deleteItem(cartItem)'>Remove From Cart</button>
+                <button (click)='toggleUpdateQuantity()'>Change Quantity</button>
+            </div>
+        </div>
     </div>
 </div>

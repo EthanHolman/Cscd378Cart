@@ -7,7 +7,10 @@ export class CartService {
     
     cartItems: CartLineItem[] = [];
 
-    constructor() {}
+    constructor() {
+        const savedCart = this.getSavedCart();
+        if (savedCart !== null) this.cartItems = savedCart;
+    }
 
     getItems(): CartLineItem[] {
         return this.cartItems;
@@ -18,15 +21,35 @@ export class CartService {
     }
 
     addToCart(item: Product, quantity: number): void {
-        this.cartItems.push(new CartLineItem(item, quantity));
+        const newCartItem = new CartLineItem(item, quantity);
+        this.cartItems.push(newCartItem);
+        this.updateSavedCart();
     }
 
-    removeFromCart(item: CartLineItem): void {
-        
+    removeFromCart(toRemove: CartLineItem): void {
+        this.cartItems = this.cartItems.filter(item => {
+            item.item !== toRemove.item;
+        });
+
+        this.updateSavedCart();
     }
 
     updateQuantity(item: CartLineItem, newQuantity: number): void {
         this.cartItems.find(cartItem => cartItem === item).quantity = newQuantity;
+    }
+
+    private updateSavedCart(): void {
+        localStorage.push("savedCart", JSON.stringify(this.cartItems));
+    }
+
+    private getSavedCart(): CartLineItem[] {
+        const savedCart = localStorage.getItem("savedCart");
+        if (savedCart !== null) {
+            const cart: CartLineItem[] = JSON.parse(savedCart);
+            return cart;
+        }
+
+        return null;
     }
 
 }

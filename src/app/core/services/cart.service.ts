@@ -28,7 +28,7 @@ export class CartService {
 
     removeFromCart(toRemove: CartLineItem): void {
         this.cartItems = this.cartItems.filter(item => {
-            item.item !== toRemove.item;
+            return item.item.id !== toRemove.item.id;
         });
 
         this.updateSavedCart();

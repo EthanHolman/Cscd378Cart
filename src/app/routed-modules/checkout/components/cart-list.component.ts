@@ -16,11 +16,16 @@ export class CartListComponent implements OnInit {
     constructor(private _cartService: CartService, private _productService: ProductService) {}
 
     ngOnInit(): void {
+        this.updateCartItems();
+    }
+
+    updateCartItems(): void {
         this.cartItems = this._cartService.getItems();
     }
 
     deleteItem(item: CartLineItem): void {
         this._cartService.removeFromCart(item);
+        this.updateCartItems();
     }
 
     toggleUpdateQuantity(): void {

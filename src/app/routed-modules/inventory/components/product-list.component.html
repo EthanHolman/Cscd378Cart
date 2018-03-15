@@ -3,12 +3,16 @@
     <div class='categories-container'>
         <h2>Categories</h2>
         <div *ngIf='!categoriesLoaded' class='category'>Loading...</div>
-        <a *ngIf='categoriesLoaded' class='category'>
+        <a (click)='showAllCategories()' *ngIf='categoriesLoaded' class='category'>
             All Products
         </a>
-        <a *ngFor='let category of categories' class='category'>
-            {{ category.name}}
-        </a>
+        <ng-container *ngFor='let category of categories'>
+            <a (click)='showCategory(category)'
+               class='category'
+               [class.active-category]='false'>
+                {{ category.name }}
+            </a>
+        </ng-container>
     </div>
     
     <div class='products-container'>

@@ -5,24 +5,26 @@
     flex-direction: column;
     
 
-    @include bp(sm) {
+    @include bp(md) {
         flex-direction: row;
     }
 
     .categories-container {
         background-color: $lighter-grey;
         text-align: center;
-
-        @include bp(sm) {
-            flex: 1;
-        }
+        flex: 1;
+        padding: 0.5em;
+        padding-bottom: 1em;
 
         .category {
+            border-radius: 5px;
             padding: 0.5em;
+            margin: 0.5em 0;
             display: block;
+            cursor: pointer;
         }
 
-        .category:hover {
+        .category:hover, .active-category {
             background-color: $accent1;
             color: white;
         }
@@ -31,18 +33,18 @@
     .products-container {
         display: flex;
         flex-wrap: wrap;
+        flex: 3;
 
-        @include bp(sm) {
-            flex: 4;
-        }
+        @include bp(lg) { flex: 4; }
 
         .product {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             cursor: pointer;
+            width: 100%;
 
-            @include bp(md) {
+            @include bp(sm) {
                 width: 50%;
                 max-width: calc(50% - 2em);
             }

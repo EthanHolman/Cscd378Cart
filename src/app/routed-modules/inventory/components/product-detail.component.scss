@@ -28,7 +28,7 @@
 
     .details-container {
         flex: 1;
-        max-width: 42em;
+        max-width: 50em;
         width: 100%;
         margin: 0 auto;
         
@@ -43,40 +43,6 @@
                     display: block;
                     padding-top: 1em;
                     font-weight: bold;
-                }
-            }
-
-            .buy-container {
-                display: flex;
-                flex-direction: row;
-                background-color: $light-grey;
-                border-top: 1px solid $light-grey;
-                font-weight: bold;
-
-                & > div { flex: 1; }
-
-                & > div:first-of-type {
-                    display: flex;
-                    border-right: 1px solid $lighter-grey;
-                    & > div:first-of-type { align-self: center; padding-left: 1em; }
-                    & > div:last-of-type { flex-grow: 1; }
-                }
-
-                input, button {
-                    text-align: center;
-                    font-size: 1em;
-                    padding: 1em;
-                    border: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-color: transparent;
-                    font-weight: bold;
-                }
-
-                button { cursor: pointer; }
-
-                button:hover {
-                    background-color: $lighter-grey;
                 }
             }
         }

@@ -9,6 +9,10 @@
     flex-wrap: wrap;
 }
 
+.empty-item {
+    padding: 1em;
+}
+
 .line-item {
     display: flex;
     flex-direction: row;

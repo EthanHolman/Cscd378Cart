@@ -25,10 +25,8 @@ export class ProductListComponent implements OnInit {
             this.categories = data;
             this.categoriesLoaded = true;
         });
-        this._productService.getAllProducts().subscribe(data => {
-            this.products = data;
-            this.productsLoaded = true;
-        });
+        
+        this.showAllCategories();
     }
 
     navigateToDetails(product: Product) {
@@ -37,5 +35,22 @@ export class ProductListComponent implements OnInit {
 
     getImgName(product: Product): string {
         return this._productService.getPrimaryImageName(product);
+    }
+
+    showAllCategories(): void {
+        this.productsLoaded = false;
+        this._productService.getAllProducts().subscribe(data => {
+            this.products = data;
+            this.productsLoaded = true;
+        });
+    }
+
+    showCategory(category: Category): void {
+        console.log(category);
+        this.productsLoaded = false;
+        this._productService.getProductsByCategory(category.id).subscribe(data => {
+            this.products = data;
+            this.productsLoaded = true;
+        });
     }
 }

@@ -34,8 +34,9 @@ a {
     display: flex;
     flex-direction: row;
     background-color: $light-grey;
-    border-top: 1px solid $light-grey;
     font-weight: bold;
+    height: 100%;
+    width: 100%;
 
     & > div { flex: 1; }
 

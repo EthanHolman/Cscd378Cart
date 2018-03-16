@@ -10,6 +10,11 @@ $bg1: #f0f0f0;
 
 $sm-margin: 0.5em;
 
+// borders
+
+$border1: 1px solid $light-grey;
+$border2: 1px solid $lighter-grey;
+
 // responsive breakpoints mixins
 
 @mixin bp($size) {

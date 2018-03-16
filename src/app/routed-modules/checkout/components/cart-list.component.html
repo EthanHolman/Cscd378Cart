@@ -4,7 +4,7 @@
     <div *ngIf='cartItems.length === 0' class='styled-section line-item empty-item'>Your shopping cart is empty!</div>
     <div *ngFor='let cartItem of cartItems' class='styled-section line-item'>
         <div class='image' [style.background-image]="'url(assets/product-img/' + getImgName(cartItem.item) + ')'"></div>
-        <div class='details'>
+        <div class='details-container'>
             <div class='item-name'>{{ cartItem.item.name }}</div>
             <div class='inner-details'>
                 <div class='item-quantity'>Quantity: {{ cartItem.quantity }}</div>
@@ -12,7 +12,7 @@
                 <div class='item-price-quant'>Subtotal: {{ (cartItem.item.price * cartItem.quantity | currency) }}</div>
             </div>
             <div class='btn-selector'>
-                <button (click)='deleteItem(cartItem)'>Remove From Cart</button>
+                <button (click)='deleteItem(cartItem)'>Remove Item</button>
                 <button (click)='toggleUpdateQuantity()'>Change Quantity</button>
             </div>
         </div>

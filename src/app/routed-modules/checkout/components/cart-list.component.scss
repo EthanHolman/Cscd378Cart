@@ -18,7 +18,7 @@
     flex-direction: row;
     width: 100%;
 
-    @include bp(md) {
+    @include bp(lg) {
         width: 50%;
         max-width: calc(50% - 2em);
         flex-grow: 1;
@@ -28,9 +28,8 @@
         flex: 1;
     }
 
-    .details {
+    .details-container {
         flex: 3;
-        padding: 1em;
         display: flex;
         flex-direction: column;
 
@@ -38,9 +37,13 @@
 
         & > div { align-self: center; }
 
-        .item-name { font-weight: bold; padding-bottom: 0.5em; }
+        .item-name {
+            font-weight: bold;
+            padding: 1em;
+        }
 
         .inner-details {
+            padding: 1em;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -50,8 +53,16 @@
             .item-price { padding-bottom: 0.5em; }
         }
 
-        .buttons {
-            padding-top: 0.5em;
+        .btn-selector {
+            border-top: $border1;
+
+            @include bp(lg) {
+                max-width: 10em;
+                flex-direction: column;
+                border-left: $border1;
+                border-top: 0;
+                button:first-of-type { border-bottom: $border2; }
+            }
         }
     }
     

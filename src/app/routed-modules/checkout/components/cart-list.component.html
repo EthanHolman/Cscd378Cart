@@ -12,8 +12,8 @@
                 <div class='item-price-quant'>Subtotal: {{ (cartItem.item.price * cartItem.quantity | currency) }}</div>
             </div>
             <div class='btn-selector'>
-                <button (click)='deleteItem(cartItem)'>Remove Item</button>
                 <button (click)='toggleUpdateQuantity()'>Change Quantity</button>
+                <button (click)='deleteItem(cartItem)'>Remove Item</button>
             </div>
         </div>
     </div>

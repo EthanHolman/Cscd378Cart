@@ -1,6 +1,23 @@
 # Cscd378Cart
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This Angular 5 application was for a web development class at Eastern Washington University. I designed this in such a way that it could be added onto more later (it's current state was to satisfy requirements for the class final).
+
+## Live Demo Site
+
+<http://www.ethanholman.com/cscd378/cart>
+
+## Code
+
+* `routed-modules` directory contains the main routed features (like /cart == CartModule)
+* `core` directory contains services shared throughout the application
+* `shared` directory contains common components that can be reused throughout the application
+
+## Styling
+
+* Application uses sass
+* No third party UI libraries are being used
+
+# Building & Running
 
 ## Development server
 
